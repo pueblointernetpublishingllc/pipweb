@@ -13,6 +13,18 @@
     <meta property="og:title" content="Pueblo Internet Publishing LLC">
     <meta property="og:description" content="A Colorado company building practical blockchain tools, consulting services, and independent web projects.">
     <meta property="og:site_name" content="Pueblo Internet Publishing">
+    <meta property="og:image" content="https://pueblointernetpublishing.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pueblo Internet Publishing LLC">
+    <meta name="twitter:description" content="A Colorado company building practical blockchain tools, consulting services, and independent web projects.">
+    <meta name="twitter:image" content="https://pueblointernetpublishing.com/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#0a0d12">
     <meta name="geo.region" content="US-CO">
     <meta name="geo.placename" content="Colorado">
@@ -53,7 +65,9 @@
             position: sticky; top: 0; z-index: 10;
         }
         .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: var(--text-primary); letter-spacing: 0.01em; }
+        .brand { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: var(--text-primary); letter-spacing: 0.01em; }
+        .brand svg { width: 30px; height: 30px; flex: none; }
+        .brand:hover { text-decoration: none; }
         .brand span { color: var(--accent-teal); }
         .nav ul { display: flex; gap: 28px; list-style: none; }
         .nav ul a { color: var(--text-secondary); font-size: 0.95rem; }
@@ -87,7 +101,14 @@
 <body>
     <header>
         <div class="wrap nav">
-            <a class="brand" href="/">Pueblo <span>Internet Publishing</span></a>
+            <a class="brand" href="/" aria-label="Pueblo Internet Publishing home">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 36V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v7.5h8a2 2 0 0 1 2 2V24h8a2 2 0 0 1 2 2v10H4z" stroke="#4ecdc4" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M10 36V29" stroke="#4ecdc4" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="31" cy="9.5" r="4" fill="#d4a574"/>
+                </svg>
+                <span>Pueblo <span style="color:var(--accent-teal)">Internet Publishing</span></span>
+            </a>
             <ul>
                 <li><a href="#ventures">Ventures</a></li>
                 <li><a href="#about">About</a></li>

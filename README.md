@@ -9,5 +9,4 @@ Static HTML, no build step. Edit `index.html` and push to `main` to deploy.
 
 - Hero copy and the About paragraph are first-draft placeholders.
 - Contact currently points at the BIS contact form. Swap for a direct email or form if preferred.
-- Add a favicon and `og-image` (none yet).
 - Ventures list: BIS, RecordStamp, Pueblo Inutile Protocol. Add or remove as needed.
