@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pueblo Internet Publishing LLC</title>
+    <meta name="description" content="Pueblo Internet Publishing LLC is a Colorado company building practical blockchain tools, consulting services, and independent web projects.">
+    <meta name="author" content="Brian Jensen, MBA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pueblointernetpublishing.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pueblointernetpublishing.com/">
+    <meta property="og:title" content="Pueblo Internet Publishing LLC">
+    <meta property="og:description" content="A Colorado company building practical blockchain tools, consulting services, and independent web projects.">
+    <meta property="og:site_name" content="Pueblo Internet Publishing">
+    <meta name="theme-color" content="#0a0d12">
+    <meta name="geo.region" content="US-CO">
+    <meta name="geo.placename" content="Colorado">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0d12;
+            --bg-secondary: #0f1318;
+            --bg-card: #141a22;
+            --bg-card-hover: #1a222d;
+            --accent-teal: #4ecdc4;
+            --accent-teal-dim: rgba(78, 205, 196, 0.15);
+            --accent-gold: #d4a574;
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #1e2a3a;
+            --max: 1040px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent-teal); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+        header {
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(10, 13, 18, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 10;
+        }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: var(--text-primary); letter-spacing: 0.01em; }
+        .brand span { color: var(--accent-teal); }
+        .nav ul { display: flex; gap: 28px; list-style: none; }
+        .nav ul a { color: var(--text-secondary); font-size: 0.95rem; }
+        .nav ul a:hover { color: var(--text-primary); text-decoration: none; }
+        .hero { padding: 96px 0 72px; }
+        .eyebrow { color: var(--accent-teal); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+        h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.12; max-width: 18ch; margin-bottom: 24px; }
+        .lede { color: var(--text-secondary); font-size: 1.15rem; max-width: 60ch; }
+        section { padding: 56px 0; border-top: 1px solid var(--border-color); }
+        h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.8rem; margin-bottom: 12px; }
+        .sub { color: var(--text-secondary); max-width: 62ch; margin-bottom: 36px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card {
+            display: block; background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 14px; padding: 26px; color: inherit; transition: border-color .2s, background .2s, transform .2s;
+        }
+        .card:hover { background: var(--bg-card-hover); border-color: var(--accent-teal); transform: translateY(-2px); text-decoration: none; }
+        .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
+        .card .url { display: block; color: var(--accent-teal); font-size: 0.85rem; margin-bottom: 12px; }
+        .card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .tag { background: var(--accent-teal-dim); color: var(--accent-teal); font-size: 0.72rem; padding: 4px 10px; border-radius: 999px; font-weight: 500; letter-spacing: 0.03em; }
+        .tag.gold { background: rgba(212, 165, 116, 0.15); color: var(--accent-gold); }
+        .about p { color: var(--text-secondary); max-width: 68ch; margin-bottom: 16px; }
+        .contact .card { max-width: 520px; }
+        footer { border-top: 1px solid var(--border-color); padding: 32px 0; color: var(--text-muted); font-size: 0.85rem; }
+        footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+        @media (max-width: 640px) { .nav ul { display: none; } .hero { padding: 64px 0 48px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap nav">
+            <a class="brand" href="/">Pueblo <span>Internet Publishing</span></a>
+            <ul>
+                <li><a href="#ventures">Ventures</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap hero">
+            <div class="eyebrow">Pueblo, Colorado</div>
+            <h1>Practical software, verifiable records, and the occasional experiment.</h1>
+            <p class="lede">Pueblo Internet Publishing LLC is the holding company behind a small portfolio of blockchain tooling, consulting work, and independent web projects. Each venture below runs under its own name.</p>
+        </div>
+
+        <section id="ventures">
+            <div class="wrap">
+                <h2>Ventures</h2>
+                <p class="sub">What the company builds and operates today.</p>
+                <div class="grid">
+                    <a class="card" href="https://blockchainintegrationstrategies.com">
+                        <h3>Blockchain Integration Strategies</h3>
+                        <span class="url">blockchainintegrationstrategies.com</span>
+                        <p>Web 2.5 consulting. Verifiable records, transparent audit trails, and tamper-evident systems for organizations that need trust and tracking, not speculative tokens.</p>
+                        <div class="tags"><span class="tag">Consulting</span><span class="tag">Audit Trails</span><span class="tag">Smart Contracts</span></div>
+                    </a>
+                    <a class="card" href="https://recordstamp.com">
+                        <h3>RecordStamp</h3>
+                        <span class="url">recordstamp.com</span>
+                        <p>Free blockchain document timestamping. Immutable proof of existence for contracts, intellectual property, and creative work. Files never leave your device; only the hash goes on-chain.</p>
+                        <div class="tags"><span class="tag">Timestamping</span><span class="tag">Proof of Existence</span><span class="tag">Monad</span></div>
+                    </a>
+                    <a class="card" href="https://nft.puebloip.com">
+                        <h3>Pueblo Inutile Protocol</h3>
+                        <span class="url">nft.puebloip.com</span>
+                        <p>A satirical art project: a beautifully over-engineered blockchain that does nothing at all. Built to make a point about purposeless tokens, and to have some fun doing it.</p>
+                        <div class="tags"><span class="tag gold">Satire</span><span class="tag gold">Art Project</span><span class="tag">Monad Testnet</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="wrap">
+                <h2>About</h2>
+                <p>Pueblo Internet Publishing LLC is a Colorado limited liability company founded by Brian Jensen, MBA. The company exists to ship useful things: tools that make records verifiable, systems that make audits boring, and consulting that keeps blockchain where it earns its keep.</p>
+                <p>The company's serious work is done under the Blockchain Integration Strategies name. Experiments and side projects are published here under their own banners so nobody confuses the two.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="wrap">
+                <h2>Contact</h2>
+                <p class="sub">Business inquiries are handled through Blockchain Integration Strategies.</p>
+                <a class="card" href="https://blockchainintegrationstrategies.com/#contact">
+                    <h3>Get in touch</h3>
+                    <span class="url">blockchainintegrationstrategies.com/#contact</span>
+                    <p>Consulting engagements, project questions, and partnership requests.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© <script>document.write(new Date().getFullYear())</script> Pueblo Internet Publishing LLC. All rights reserved.</span>
+            <span>Pueblo, Colorado, USA</span>
+        </div>
+    </footer>
+</body>
+</html>
