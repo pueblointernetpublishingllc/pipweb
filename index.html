@@ -40,6 +40,15 @@
             --accent-teal: #4ecdc4;
             --accent-teal-dim: rgba(78, 205, 196, 0.15);
             --accent-gold: #d4a574;
+            --adobe-1: #b5552f;
+            --adobe-2: #d4874f;
+            --adobe-3: #d4a574;
+            --adobe-4: #e9cba3;
+            --adobe-2-dim: rgba(212, 135, 79, 0.16);
+            --adobe-1-dim: rgba(181, 85, 47, 0.18);
+            --adobe-3-dim: rgba(212, 165, 116, 0.16);
+            --adobe-4-dim: rgba(233, 203, 163, 0.14);
+            --adobe-stripe: linear-gradient(90deg, var(--adobe-1) 0 25%, var(--adobe-2) 25% 50%, var(--adobe-3) 50% 75%, var(--adobe-4) 75% 100%);
             --text-primary: #f0f4f8;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
@@ -55,45 +64,58 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        a { color: var(--accent-teal); text-decoration: none; }
+        a { color: var(--adobe-2); text-decoration: none; }
+        a:hover { color: var(--adobe-4); }
         a:hover { text-decoration: underline; }
         .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
         header {
             border-bottom: 1px solid var(--border-color);
+            position: relative;
             background: rgba(10, 13, 18, 0.9);
             backdrop-filter: blur(10px);
             position: sticky; top: 0; z-index: 10;
         }
+        header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--adobe-stripe); opacity: 0.85; }
         .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
         .brand { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem; color: var(--text-primary); letter-spacing: 0.01em; }
         .brand svg { width: 30px; height: 30px; flex: none; }
         .brand:hover { text-decoration: none; }
-        .brand span { color: var(--accent-teal); }
+        .brand span span { color: var(--adobe-2); }
         .nav ul { display: flex; gap: 28px; list-style: none; }
         .nav ul a { color: var(--text-secondary); font-size: 0.95rem; }
         .nav ul a:hover { color: var(--text-primary); text-decoration: none; }
         .hero { padding: 96px 0 72px; }
-        .eyebrow { color: var(--accent-teal); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+        main { position: relative; z-index: 0; }
+        main::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 720px; pointer-events: none; z-index: -1;
+            background: radial-gradient(620px 460px at 6% 0%, rgba(212, 135, 79, 0.13) 0%, rgba(212, 135, 79, 0.06) 35%, rgba(212, 135, 79, 0.02) 65%, rgba(212, 135, 79, 0) 100%); }
+        .eyebrow { color: var(--adobe-2); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
         h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.12; max-width: 18ch; margin-bottom: 24px; }
         .lede { color: var(--text-secondary); font-size: 1.15rem; max-width: 60ch; }
         section { padding: 56px 0; border-top: 1px solid var(--border-color); }
         h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.8rem; margin-bottom: 12px; }
+        h2::after { content: ""; display: block; width: 56px; height: 4px; margin-top: 12px; border-radius: 2px; background: var(--adobe-stripe); }
         .sub { color: var(--text-secondary); max-width: 62ch; margin-bottom: 36px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card {
             display: block; background: var(--bg-card); border: 1px solid var(--border-color);
             border-radius: 14px; padding: 26px; color: inherit; transition: border-color .2s, background .2s, transform .2s;
         }
-        .card:hover { background: var(--bg-card-hover); border-color: var(--accent-teal); transform: translateY(-2px); text-decoration: none; }
+        .card { --c: var(--adobe-3); --c-dim: var(--adobe-3-dim); border-left: 3px solid var(--c); }
+        .card:hover { background: var(--bg-card-hover); border-color: var(--c); transform: translateY(-2px); text-decoration: none; color: inherit; }
+        .card.c1 { --c: var(--adobe-1); --c-dim: var(--adobe-1-dim); }
+        .card.c2 { --c: var(--adobe-2); --c-dim: var(--adobe-2-dim); }
+        .card.c3 { --c: var(--adobe-3); --c-dim: var(--adobe-3-dim); }
+        .card.c4 { --c: var(--adobe-4); --c-dim: var(--adobe-4-dim); }
         .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
-        .card .url { display: block; color: var(--accent-teal); font-size: 0.85rem; margin-bottom: 12px; }
+        .card .url { display: block; color: var(--c); font-size: 0.85rem; margin-bottom: 12px; }
         .card p { color: var(--text-secondary); font-size: 0.95rem; }
         .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-        .tag { background: var(--accent-teal-dim); color: var(--accent-teal); font-size: 0.72rem; padding: 4px 10px; border-radius: 999px; font-weight: 500; letter-spacing: 0.03em; }
-        .tag.gold { background: rgba(212, 165, 116, 0.15); color: var(--accent-gold); }
+        .tag { background: var(--c-dim); color: var(--c); font-size: 0.72rem; padding: 4px 10px; border-radius: 999px; font-weight: 500; letter-spacing: 0.03em; }
+        .tag.gold { background: var(--adobe-4-dim); color: var(--adobe-4); }
         .about p { color: var(--text-secondary); max-width: 68ch; margin-bottom: 16px; }
         .contact .card { max-width: 520px; }
-        footer { border-top: 1px solid var(--border-color); padding: 32px 0; color: var(--text-muted); font-size: 0.85rem; }
+        footer { border-top: 1px solid var(--border-color); padding: 32px 0; color: var(--text-muted); font-size: 0.85rem; position: relative; }
+        footer::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 2px; background: var(--adobe-stripe); opacity: 0.6; }
         footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
         @media (max-width: 640px) { .nav ul { display: none; } .hero { padding: 64px 0 48px; } }
     </style>
@@ -112,7 +134,7 @@
                     <line x1="29" y1="18" x2="29" y2="22" stroke="#d4a574" stroke-width="2"/>
                     <line x1="18" y1="29" x2="22" y2="29" stroke="#d4a574" stroke-width="2"/>
                 </svg>
-                <span>Pueblo <span style="color:var(--accent-teal)">Internet Publishing</span></span>
+                <span>Pueblo <span>Internet Publishing</span></span>
             </a>
             <ul>
                 <li><a href="#ventures">Ventures</a></li>
@@ -134,19 +156,19 @@
                 <h2>Ventures</h2>
                 <p class="sub">What the company builds and operates today.</p>
                 <div class="grid">
-                    <a class="card" href="https://blockchainintegrationstrategies.com">
+                    <a class="card c1" href="https://blockchainintegrationstrategies.com">
                         <h3>Blockchain Integration Strategies</h3>
                         <span class="url">blockchainintegrationstrategies.com</span>
                         <p>Web 2.5 consulting. Verifiable records, transparent audit trails, and tamper-evident systems for organizations that need trust and tracking, not speculative tokens.</p>
                         <div class="tags"><span class="tag">Consulting</span><span class="tag">Audit Trails</span><span class="tag">Smart Contracts</span></div>
                     </a>
-                    <a class="card" href="https://recordstamp.com">
+                    <a class="card c2" href="https://recordstamp.com">
                         <h3>RecordStamp</h3>
                         <span class="url">recordstamp.com</span>
                         <p>Free blockchain document timestamping. Immutable proof of existence for contracts, intellectual property, and creative work. Files never leave your device; only the hash goes on-chain.</p>
                         <div class="tags"><span class="tag">Timestamping</span><span class="tag">Proof of Existence</span><span class="tag">Monad</span></div>
                     </a>
-                    <a class="card" href="https://nft.puebloip.com">
+                    <a class="card c3" href="https://nft.puebloip.com">
                         <h3>Pueblo Inutile Protocol</h3>
                         <span class="url">nft.puebloip.com</span>
                         <p>A satirical art project: a beautifully over-engineered blockchain that does nothing at all. Built to make a point about purposeless tokens, and to have some fun doing it.</p>
@@ -168,7 +190,7 @@
             <div class="wrap">
                 <h2>Contact</h2>
                 <p class="sub">Business inquiries are handled through Blockchain Integration Strategies.</p>
-                <a class="card" href="https://blockchainintegrationstrategies.com/#contact">
+                <a class="card c4" href="https://blockchainintegrationstrategies.com/#contact">
                     <h3>Get in touch</h3>
                     <span class="url">blockchainintegrationstrategies.com/#contact</span>
                     <p>Consulting engagements, project questions, and partnership requests.</p>
