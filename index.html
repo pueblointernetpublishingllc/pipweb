@@ -106,6 +106,10 @@
         .card.c2 { --c: var(--adobe-2); --c-dim: var(--adobe-2-dim); }
         .card.c3 { --c: var(--adobe-3); --c-dim: var(--adobe-3-dim); }
         .card.c4 { --c: var(--adobe-4); --c-dim: var(--adobe-4-dim); }
+        .card.static { cursor: default; }
+        .card.static:hover { transform: none; background: var(--bg-card); border-color: var(--border-color); border-left-color: var(--c); }
+        .card .status { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c); margin-bottom: 12px; }
+        .card .status::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--c); margin-right: 7px; vertical-align: 1px; }
         .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
         .card .url { display: block; color: var(--c); font-size: 0.85rem; margin-bottom: 12px; }
         .card p { color: var(--text-secondary); font-size: 0.95rem; }
@@ -138,6 +142,7 @@
             </a>
             <ul>
                 <li><a href="#ventures">Ventures</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -174,6 +179,27 @@
                         <p>A satirical art project: a beautifully over-engineered blockchain that does nothing at all. Built to make a point about purposeless tokens, and to have some fun doing it.</p>
                         <div class="tags"><span class="tag gold">Satire</span><span class="tag gold">Art Project</span><span class="tag">Monad Testnet</span></div>
                     </a>
+                    <div class="card c4 static">
+                        <h3>Learning Management System</h3>
+                        <span class="status">Active project, in development</span>
+                        <p>A training and compliance platform for organizations that need course completions, instructor review, and externally earned certificates tracked in one place. Being built with a first client; not yet publicly available.</p>
+                        <div class="tags"><span class="tag">Training</span><span class="tag">Compliance</span><span class="tag">Certificate Intake</span><span class="tag">SCORM</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap">
+            <div class="wrap">
+                <h2>Roadmap</h2>
+                <p class="sub">Where the ventures are headed next.</p>
+                <div class="grid">
+                    <div class="card c1 static">
+                        <h3>Verifiable credentials for the LMS</h3>
+                        <span class="status">Planned, a Blockchain Integration Strategies project</span>
+                        <p>Integrate RecordStamp into the Learning Management System so that course completions and certificates are anchored on-chain at the moment they are issued. Any employer, regulator, or auditor could then confirm a credential is genuine without contacting the issuer. Likely to be delivered under the certhash.com and credentialhash.com names.</p>
+                        <div class="tags"><span class="tag">BIS</span><span class="tag">RecordStamp</span><span class="tag">certhash.com</span><span class="tag">credentialhash.com</span></div>
+                    </div>
                 </div>
             </div>
         </section>
