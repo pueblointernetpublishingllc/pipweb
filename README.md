@@ -11,3 +11,8 @@ Static HTML, no build step. Edit `index.html` and push to `main` to deploy.
 - Contact currently points at the BIS contact form. Swap for a direct email or form if preferred.
 - Ventures list: BIS, RecordStamp, Pueblo Inutile Protocol, LMS (unlinked, in development), AI Workstation (unlinked, private use), Email Hosting (unlinked, active service). Roadmap section: RecordStamp-in-LMS credentials (BIS project, certhash.com / credentialhash.com). Add or remove as needed.
 - Notable Clients: Strategic Wynns LLC (linked). Add more cards to the grid as needed.
+
+
+## Holding page (2026-10-20)
+
+The site was replaced by a neutral holding page while Pueblo Internet Publishing LLC is not yet licensed to conduct business. The full site is preserved on branch `archive/pre-holding-20261020` and tag `pre-holding-20261020`; restore with `git checkout archive/pre-holding-20261020 -- .` (keeping this note) and push.
